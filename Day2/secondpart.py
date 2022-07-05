@@ -1,3 +1,5 @@
+import functools
+
 #filename = "test.in"
 filename = "data.in"
 
@@ -15,11 +17,11 @@ for line in data:
     if values[len(values) - 1 ] == '':
         del values[len(values) - 1]
 
-    values = list(map(int, values))
+    for index, value in enumerate(values):
+        values[index] = int(value)
 
-    dimensions = [values[0] * values[1], values[0] * values[2], values[1] * values[2]]
-    for value in dimensions:
-        result += 2 * value
-    result += min(dimensions)
+    values = sorted(values)
 
+    result += 2 * values[0] + 2 * values[1]
+    result += functools.reduce(lambda a,b : a*b, values)
 print(result)
