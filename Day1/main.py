@@ -1,5 +1,5 @@
-filename = "test"
-filename = "data"
+#filename = "test.in"
+filename = "data.in"
 
 data = open(filename, 'r')
 
