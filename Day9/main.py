@@ -42,6 +42,7 @@ def generateAllPaths(vertices):
             result.append(arr)
     return result
 
+
 def getPathLength(path, edges):
     result = 0
     actual = path[0]
@@ -50,12 +51,12 @@ def getPathLength(path, edges):
         actual = path[i]
     return result
 
+
 def printPath(path, edges):
     pathName = ''
     for town in path:
         pathName += town + ' -> '
     print(pathName[:-4], getPathLength(path, edges))
-
 
 
 vertices, edges = generateGraph()
